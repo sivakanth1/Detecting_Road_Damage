@@ -1,0 +1,49 @@
+cwd directory: F:\RoadDamageDetection\roaddamagedetector2022-main\yolov7
+
+python -m tensorboard.main --logdir runs/train
+
+conda env config vars set KMP_DUPLICATE_LIB_OK=TRUE
+conda deactivate
+conda activate base  # or your env name
+
+set KMP_DUPLICATE_LIB_OK=TRUE
+
+All6->
+python train.py --workers 8 --device 0 --batch-size 10 ^
+--data data/crdd22.yaml ^
+--img 640 640 ^
+--cfg cfg/training/yolov7-custom.yaml ^
+--weights yolov7_training.pt ^
+--name yolov7all6 ^
+--hyp data/hyp.scratch.p5.custom.yaml ^
+--epoch 100
+
+
+python detect.py --weights runs/train/yolov7all6/weights/best.pt --conf 0.10 --img 640 --source F:/ASE_Project/test_images --save-conf
+
+
+All61->
+python train.py --workers 8 --device 0 --batch-size 10 ^
+--data data/crdd22.yaml ^ train
+--img 512 512 ^
+--cfg cfg/training/yolov7-custom.yaml ^
+--weights yolov7_training.pt ^
+--name yolov7all61 ^
+--hyp data/hyp.scratch.p5.custom.yaml ^
+--epoch 200
+
+
+python train.py --resume
+
+
+python detect.py --weights runs/train/yolov7all61/weights/best.pt --conf 0.25 --img 512 --source F:/ASE_Project/test_images --save-conf
+
+
+python distill_train.py --workers 8 --device 0 --batch-size 8 ^
+--data data/crdd22.yaml ^
+--img 640 ^
+--cfg cfg/training/yolov7-custom.yaml ^
+--weights yolov7_training.pt ^
+--name yolov7_distilled ^
+--hyp data/hyp.scratch.p5.custom.yaml ^
+--epochs 100

@@ -1,0 +1,51 @@
+Folder PATH listing for volume Windows
+Volume serial number is 520B-286B
+C:.
+\---RDD2022
+    +---China_Drone
+    |   \---train
+    |       +---annotations
+    |       |   \---xmls
+    |       \---images
+    +---China_MotorBike
+    |   +---test
+    |   |   \---images
+    |   \---train
+    |       +---annotations
+    |       |   \---xmls
+    |       \---images
+    +---Czech
+    |   +---test
+    |   |   \---images
+    |   \---train
+    |       +---annotations
+    |       |   \---xmls
+    |       \---images
+    +---India
+    |   +---test
+    |   |   \---images
+    |   \---train
+    |       +---annotations
+    |       |   \---xmls
+    |       \---images
+    +---Japan
+    |   +---test
+    |   |   \---images
+    |   \---train
+    |       +---annotations
+    |       |   \---xmls
+    |       \---images
+    +---Norway
+    |   +---test
+    |   |   \---images
+    |   \---train
+    |       +---annotations
+    |       |   \---xmls
+    |       \---images
+    \---United_States
+        +---test
+        |   \---images
+        \---train
+            +---annotations
+            |   \---xmls
+            \---images
